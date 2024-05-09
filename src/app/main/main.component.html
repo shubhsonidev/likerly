@@ -1,0 +1,210 @@
+<div class="main-cont">
+  <div class="d-flex flex-row align-items-center justify-content-between">
+    <div class="title p-3">Linkerly</div>
+    <div style="color: white" class="p-3 text">
+      Made with ♥️ in india by Shubh Soni
+    </div>
+  </div>
+  <div
+    class="d-flex justify-content-center align-items-center flex-column w-100"
+    style="height: 90%"
+  >
+    <div class="disc mb-3">Shorten Your Loooong Links :)</div>
+    <div class="text-disc mb-4">
+      <span class="title" style="font-size: 1rem">Linkerly</span> is an
+      efficient and easy to use URL shortening service that streamlines your
+      online experience.
+    </div>
+    <div
+      class="short-cont d-flex flex-row justify-content-between align-items-center"
+    >
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <i class="fa fa-link p-2" style="color: #c9ced6"></i>
+        <input placeholder="Enter the link here..." [(ngModel)]="link" />
+      </div>
+
+      <button class="shorten-btn" (click)="fetchData()" *ngIf="!loading">
+        Shorten Now!
+      </button>
+      <button
+        class="shorten-btn d-flex justify-content-center align-items-center"
+        disabled
+        *ngIf="loading"
+      >
+        <div
+          class="spinner-grow text-light"
+          style="height: 1rem; width: 1rem"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </button>
+    </div>
+    <div class="mt-5"></div>
+    <table
+      class="table table-dark table-hover m-0"
+      style="width: 70vw"
+      *ngIf="saved.length != 0"
+    >
+      <thead style="border: none">
+        <tr style="background-color: transparent">
+          <th
+            scope="col"
+            style="border-top-left-radius: 8px"
+            style="width: 22.5vw"
+          >
+            Short Link
+          </th>
+          <th scope="col" style="width: 30.5vw">Original Link</th>
+          <th scope="col" style="width: 7.5vw">QR Code</th>
+          <th scope="col" style="border-top-right-radius: 8px; width: 10vw">
+            Date
+          </th>
+        </tr>
+      </thead>
+    </table>
+    <div style="max-height: 15rem; overflow-y: auto" class="cont">
+      <table
+        class="table table-dark table-hover"
+        style="width: 70vw"
+        *ngIf="saved.length != 0"
+      >
+        <tbody>
+          <tr *ngFor="let item of saved.slice().reverse()">
+            <td
+              style="width: 22.5vw"
+              class="d-flex flex-row justify-content-start align-items-center"
+            >
+              {{ currentUrl + "/re/" + item.shortlink }}
+              <div
+                class="d-flex justify-content-center align-items-center ms-1 round"
+                (click)="copy(item.shortlink)"
+              >
+                <i class="fa-solid fa-copy" style="color: white"></i>
+              </div>
+            </td>
+            <td
+              style="
+                width: 30.5vw;
+                max-width: 30.5vw;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              "
+            >
+              {{ item.originallink }}
+            </td>
+            <td style="width: 7.5vw">
+              <button
+                (click)="selectQr(item.shortlink)"
+                style="padding: 0; color: #c9ced6"
+                type="button"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#qr"
+              >
+                <i class="fa-solid fa-qrcode" style="font-size: 1.4rem"></i>
+              </button>
+            </td>
+            <td style="width: 10vw">{{ item.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-bac" style="height: 20rem">
+      <div class="modal-header" style="border: none">
+        <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          style="color: white"
+        ></button>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="disc mob-disc" style="font-size: 3rem">Voila !!</div>
+        <div class="disc mob-disc-2 mb-2" style="font-size: 2rem">
+          Here is Your Shorten Link :)
+        </div>
+        <div
+          class="short-cont mob-short d-flex flex-row justify-content-between align-items-center text-white"
+          style="width: 30vw"
+        >
+          <div class="ps-4">
+            {{ currentUrl + "/re/" + responseData?.data.id }}
+          </div>
+          <button
+            class="shorten-btn mob-btn"
+            (click)="copyCode()"
+            style="width: 6rem"
+          >
+            Copy
+            <fa-icon
+              [icon]="faLink"
+              class="ps-1"
+              style="color: white"
+            ></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="qr"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-bac" style="height: 24rem">
+      <div class="modal-header" style="border: none">
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          style="color: white"
+        ></button>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <!-- <div style="border-radius: 1rem; overflow: hidden"> -->
+        <div #divToDownload>
+          <qr-code
+            style="border-radius: 1rem"
+            [value]="selectedQr"
+            size="250"
+            errorCorrectionLevel="Q"
+            centerImageSrc="undefined"
+            centerImageSize="undefined"
+          >
+          </qr-code>
+        </div>
+
+        <button class="btn m-4" (click)="downloadQRCode()">
+          <i
+            class="fa-solid fa-download"
+            style="font-size: 1.4rem; color: white"
+          ></i>
+        </button>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>

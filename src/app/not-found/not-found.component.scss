@@ -1,0 +1,33 @@
+.main-cont {
+  background-color: #101520;
+  background-image: url("../../assets/bac.svg");
+  background-size: cover;
+
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  @keyframes moveBackground {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 10% 10%;
+    }
+  }
+  animation: moveBackground 4s alternate-reverse infinite;
+}
+
+.disc {
+  font-size: 4rem;
+  background-color: #f3ec78;
+  height: 4rem;
+  background-image: linear-gradient(90deg, #1f4ede, #d65696, #1f4ede);
+  background-size: 90%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-weight: 600;
+  padding-top: 1rem;
+}

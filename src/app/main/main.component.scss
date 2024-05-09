@@ -1,0 +1,217 @@
+.main-cont {
+  background-color: #101520;
+  background-image: url("../../assets/bac.svg");
+  background-size: cover;
+
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  @keyframes moveBackground {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 10% 10%;
+    }
+  }
+  animation: moveBackground 4s alternate-reverse infinite;
+}
+.title {
+  font-size: 2rem;
+  background-color: #f3ec78;
+  background-image: linear-gradient(90deg, #d65696, #1f4ede);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.disc {
+  font-size: 4rem;
+  background-color: #f3ec78;
+  height: 4rem;
+  background-image: linear-gradient(90deg, #1f4ede, #d65696, #1f4ede);
+  background-size: 90%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-weight: 600;
+  padding-top: 1rem;
+}
+
+.short-cont {
+  width: 40vw;
+  height: 3rem;
+  border: #303d58 2px solid;
+  border-radius: 30px;
+  background-color: #181e29;
+}
+
+input {
+  background-color: #181e29;
+  border: none;
+  width: 28vw;
+  height: 2.7rem;
+  caret-color: #d65696;
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+
+.shorten-btn {
+  width: 9vw;
+  height: 2.4rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #144ee3;
+  color: white;
+  margin-right: 4px;
+}
+
+button:focus {
+  outline: none;
+}
+.text-disc {
+  color: #757575;
+  width: 35rem;
+  text-align: center;
+}
+
+.modal-bac {
+  background-color: #101520;
+}
+
+th {
+  background-color: #181e29;
+  padding: 1rem;
+  color: #c9ced6;
+  border: none;
+  width: 17.5vw;
+}
+tr {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid #101520 2px;
+}
+td {
+  width: 17.5vw;
+
+  padding: 0.8rem;
+  background-color: rgba(24, 30, 41, 0.2);
+  border: none;
+  color: #c9ced6;
+}
+
+.round {
+  background-color: #1c283f;
+  border-radius: 100%;
+  width: 1.7rem;
+  height: 1.7rem;
+  cursor: pointer;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.cont::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.cont {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+btn:hover {
+  color: #144ee3;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 1.5rem;
+    background-color: #f3ec78;
+    background-image: linear-gradient(90deg, #d65696, #1f4ede);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-weight: 600;
+  }
+  .text {
+    font-size: 0.7rem;
+  }
+  .disc {
+    font-size: 2rem;
+    background-color: #f3ec78;
+    height: 7rem;
+    line-height: 2.5rem;
+    text-align: center;
+    background-image: linear-gradient(90deg, #1f4ede, #d65696, #1f4ede);
+    background-size: 90%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-weight: 600;
+    padding-top: 1rem;
+  }
+  .text-disc {
+    color: #757575;
+    width: 80vw;
+    text-align: center;
+  }
+
+  .short-cont {
+    width: 90vw;
+    height: 3rem;
+    border: #303d58 2px solid;
+    border-radius: 30px;
+    background-color: #181e29;
+  }
+
+  input {
+    background-color: #181e29;
+    border: none;
+    width: 55vw;
+    height: 2.7rem;
+    caret-color: #d65696;
+    color: white;
+  }
+
+  .shorten-btn {
+    width: 30vw;
+    height: 2.4rem;
+    border: none;
+    border-radius: 30px;
+    background-color: #144ee3;
+    color: white;
+    margin-right: 4px;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+  }
+  table {
+    display: none;
+  }
+  .mob-disc {
+    margin: 0;
+    font-size: 2.5rem !important;
+    height: 4rem !important;
+  }
+  .mob-disc-2 {
+    margin: 0;
+    font-size: 1.6rem !important;
+  }
+  .mob-short {
+    width: 80vw !important;
+    font-size: 0.7rem;
+  }
+  .mob-btn {
+    width: 4rem !important;
+    font-size: 0.7rem;
+  }
+}
