@@ -39,11 +39,12 @@ export class MainComponent {
   isHttpsLink(url: string): boolean {
     const regex =
       /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
-    return regex.test(url);
+    return regex.test(url.toLowerCase());
   }
 
   ngOnInit(): void {
     this.currentUrl = window.location.origin;
+    this.currentUrl = this.currentUrl.replace(/^https?:\/\//, '');
 
     const savedLinks = localStorage.getItem('links');
 

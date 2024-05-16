@@ -37,7 +37,7 @@ export class RedirectComponent {
             if (url == null) {
               this.router.navigate(['/NotFound']);
             } else {
-              if (url.includes('https')) {
+              if (url.toLowerCase().includes('https')) {
                 // Open the URL in a new tab
                 window.open(url, '_self');
               } else {

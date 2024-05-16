@@ -1,7 +1,8 @@
 .main-cont {
   background-color: #101520;
-  background-image: url("../../assets/bac.svg");
-  background-size: cover;
+  background-image: url("../../assets/be.png");
+  background-size: 80%;
+  background-position: 50% 35%;
 
   height: 100vh;
   width: 100vw;
@@ -9,10 +10,10 @@
 
   @keyframes moveBackground {
     from {
-      background-position: 0% 0%;
+      background-size: 80%;
     }
     to {
-      background-position: 10% 10%;
+      background-size: 90%;
     }
   }
   animation: moveBackground 4s alternate-reverse infinite;
