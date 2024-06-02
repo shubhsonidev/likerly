@@ -21,47 +21,54 @@ export class RedirectComponent {
   ngOnInit(): void {
     this.getIp().subscribe((ip) => {
       this.userIp = ip;
-      // console.log(`User IP: ${this.userIp}`);
+      console.log(`User IP: ${this.userIp}`);
 
       const ipGeoUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=cad8a3b8f883434b9e0b102ca8181785&ip=${this.userIp}`;
 
       this.http.get<any>(ipGeoUrl).subscribe((res) => {
         this.ipData = res;
         console.log(this.ipData);
+        this.route.params.subscribe((params) => {
+          this.id = params['id'];
+
+          if (!this.id) {
+            this.router.navigate(['/main']);
+          }
+
+          this.http
+            .get<any>(
+              'https://script.google.com/macros/s/AKfycbw5ooH_qeM89P5DJHuUDaDKG7qqNyKiQPrxbrh-3OgJfg-PFQTJv6D9Gd6j06UkCw61xA/exec?apifor=getoriginal&id=' +
+                this.id +
+                '&content=' +
+                this.ipData.country_name +
+                '|' +
+                this.ipData.city +
+                '|' +
+                this.ipData.country_flag +
+                '|' +
+                new Date()
+            )
+            .subscribe((Response) => {
+              console.log(Response);
+              if (Response.data) {
+                let url = Response.data.originalUrl;
+
+                if (url == null) {
+                  this.router.navigate(['/NotFound']);
+                } else {
+                  if (url.toLowerCase().includes('https')) {
+                    window.open(url, '_self');
+                  } else {
+                    window.open('https://' + url, '_self');
+                  }
+                }
+              }
+            });
+        });
       });
     });
 
     // Access route parameters and extract ID
-    this.route.params.subscribe((params) => {
-      this.id = params['id'];
-
-      if (!this.id) {
-        this.router.navigate(['/main']);
-      }
-
-      this.http
-        .get<any>(
-          'https://script.google.com/macros/s/AKfycbzxNf1xyzPR6jzr4S2O79xVbvQfTU2OJNxKBzW96BKVCKW-U_IJ_8A8MT3TEc5wb0zgaw/exec?apifor=getoriginal&id=' +
-            this.id
-        )
-        .subscribe((Response) => {
-          console.log(Response);
-          if (Response.data) {
-            let url = Response.data.originalUrl;
-
-            if (url == null) {
-              this.router.navigate(['/NotFound']);
-            } else {
-              if (url.toLowerCase().includes('https')) {
-                // Open the URL in a new tab
-                // window.open(url, '_self');
-              } else {
-                // window.open('https://' + url, '_self');
-              }
-            }
-          }
-        });
-    });
   }
   getIp(): Observable<string> {
     const ipApiUrl = 'https://api.ipify.org?format=text';
