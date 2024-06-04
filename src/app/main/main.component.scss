@@ -130,6 +130,9 @@ btn:hover {
   color: #144ee3;
 }
 
+.mob-table {
+  display: none;
+}
 @media only screen and (max-width: 600px) {
   .title {
     font-size: 1.5rem;
@@ -194,9 +197,25 @@ btn:hover {
     font-size: 0.8rem;
     line-height: 0.8rem;
   }
-  table {
+  .web-table {
     display: none;
   }
+  .mob-table {
+    display: block;
+    max-width: 100%; /* Ensure it takes full width of the parent */
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+
+  .table-responsive {
+    overflow-x: auto; /* Ensure the table can be scrolled horizontally */
+  }
+
+  .cont {
+    max-height: 15rem;
+    overflow-y: auto;
+    overflow-x: auto; /* Ensure the container can be scrolled both vertically and horizontally */
+  }
+
   .mob-disc {
     margin: 0;
     font-size: 2.5rem !important;
