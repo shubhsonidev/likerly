@@ -10,7 +10,7 @@ export class FetchCodeService {
 
   fetchData(payload: any): Observable<any> {
     return this.http.get<any>(
-      'https://script.google.com/macros/s/AKfycbw5ooH_qeM89P5DJHuUDaDKG7qqNyKiQPrxbrh-3OgJfg-PFQTJv6D9Gd6j06UkCw61xA/exec?apifor=add&redirect_url=' +
+      'https://script.google.com/macros/s/AKfycbyopRx0C0RRkdKVagX7YcaBT32L-2Ksp1xomG2YZC9rAlGkCG8bBKvewAoztX5wmtdO3Q/exec?apifor=add&redirect_url=' +
         payload.redirect_url
     );
   }

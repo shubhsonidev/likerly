@@ -37,7 +37,7 @@ export class RedirectComponent {
 
           this.http
             .get<any>(
-              'https://script.google.com/macros/s/AKfycbw5ooH_qeM89P5DJHuUDaDKG7qqNyKiQPrxbrh-3OgJfg-PFQTJv6D9Gd6j06UkCw61xA/exec?apifor=getoriginal&id=' +
+              'https://script.google.com/macros/s/AKfycbyopRx0C0RRkdKVagX7YcaBT32L-2Ksp1xomG2YZC9rAlGkCG8bBKvewAoztX5wmtdO3Q/exec?apifor=getoriginal&id=' +
                 this.id +
                 '&content=' +
                 this.ipData.country_name +
