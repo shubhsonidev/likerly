@@ -20,9 +20,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainComponent } from './main/main.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TrackComponent } from './track/track.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, RedirectComponent, NotFoundComponent],
+  declarations: [AppComponent, MainComponent, RedirectComponent, NotFoundComponent, TrackComponent, SearchComponent],
   imports: [
     BrowserModule,
     CommonModule,
