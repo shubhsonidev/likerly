@@ -9,12 +9,13 @@ LINKERLY is a link shortening solution designed to transform long URLs into shor
 - **Link Tracking:** Track the performance of your shortened links.
 - **Link History:** View a history of all previously shortened links, now available on all devices.
 
-![Alt text]([image_url](https://raw.githubusercontent.com/shubhsonidev/linkerly/master/img00002.jpeg))
-![Alt text]([image_url](https://raw.githubusercontent.com/shubhsonidev/linkerly/master/img00001.jpeg))
+![Alt text](https://raw.githubusercontent.com/shubhsonidev/linkerly/master/img00002.jpeg)
+![Alt text](https://raw.githubusercontent.com/shubhsonidev/linkerly/master/img00001.jpeg)
+
 
 ## Live Demo
 
-Check out the live demo of LINKERLY here: [LINKERLY Live](https://linkerly.netlify.app/main)
+Check out the live demo of LINKERLY here: <a href="https://linkerly.netlify.app/main" target="_blank">LINKERLY Live</a>
 
 ## Tech Stack
 
