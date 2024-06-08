@@ -1,27 +1,103 @@
-# LinkShortner
+# LINKERLY
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+LINKERLY is a link shortening solution designed to transform long URLs into short, manageable links. It features a responsive user interface and includes link tracking and history capabilities.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Link Shortening:** Easily shorten long URLs.
+- **Responsive Design:** Optimized for both desktop and mobile devices.
+- **Link Tracking:** Track the performance of your shortened links.
+- **Link History:** View a history of all previously shortened links, now available on all devices.
 
-## Code scaffolding
+![Alt text](image_url)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Live Demo
 
-## Build
+Check out the live demo of LINKERLY here: [LINKERLY Live](https://linkerly.netlify.app/main)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tech Stack
 
-## Running unit tests
+- **Angular**
+- **Bootstrap**
+- **App Script**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting Started
 
-## Running end-to-end tests
+### Prerequisites
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Node.js and npm installed on your machine.
+- Angular CLI 16.0.0 installed globally via npm.
 
-## Further help
+### Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. **Clone the repository:**
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd LINKERLY
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+1. **Start the development server:**
+
+    ```bash
+    ng serve
+    ```
+
+2. **Open your browser and navigate to:**
+
+    ```bash
+    http://localhost:4200/
+    ```
+
+## Usage
+
+### Shorten a Link
+
+1. Enter the long URL in the input field.
+2. Click the "Shorten" button.
+3. The shortened link will be displayed, and you can copy it for use.
+
+### Track a Link
+
+1. Click on the track button of the links provided in the history table.
+
+## Deployment
+
+LINKERLY is hosted on Netlify. For deploying your own version:
+
+1. Create a Netlify account if you don't have one.
+2. Connect your GitHub repository to Netlify.
+3. Follow the deployment instructions provided by Netlify.
+
+## Note
+
+Since LINKERLY is hosted on Netlify, it has a long base URL. The length of the shortened links can be further reduced by using a smaller domain name.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and push your branch to GitHub.
+4. Submit a pull request for review.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Inspired by popular link shortening services.
+- Built with the power of Angular, Bootstrap, and App Script.
+
+## Contact
+
+For any questions or feedback, please contact shubhsoni.dev@gmail.com
