@@ -91,10 +91,6 @@ Since LINKERLY is hosted on Netlify, it has a long base URL. The length of the s
 3. Commit your changes and push your branch to GitHub.
 4. Submit a pull request for review.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements
 
 - Inspired by popular link shortening services.
